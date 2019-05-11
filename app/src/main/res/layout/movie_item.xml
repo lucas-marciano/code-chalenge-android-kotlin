@@ -36,8 +36,7 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:textSize="16sp"
-            android:textStyle="bold"
-            tools:text="Titanic" />
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/genresTextView"
@@ -48,8 +47,7 @@
             android:layout_toEndOf="@id/posterImageView"
             android:ellipsize="end"
             android:maxLines="2"
-            android:textSize="14sp"
-            tools:text="Drama, Romance, Thriller" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/releaseDateTextView"
@@ -60,8 +58,7 @@
             android:layout_marginStart="8dp"
             android:layout_toEndOf="@id/posterImageView"
             android:textSize="12sp"
-            android:textStyle="italic"
-            tools:text="19/12/1997" />
+            android:textStyle="italic" />
 
     </RelativeLayout>
 
