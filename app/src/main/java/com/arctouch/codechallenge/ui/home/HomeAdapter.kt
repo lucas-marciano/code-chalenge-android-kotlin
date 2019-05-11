@@ -9,9 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.arctouch.codechallenge.R
 import com.arctouch.codechallenge.model.Movie
-import com.arctouch.codechallenge.prefs
 import com.arctouch.codechallenge.ui.detail.DetailsActivity
-import com.arctouch.codechallenge.util.Constants
 import com.arctouch.codechallenge.util.Constants.ID_MOVIE_SELECTED
 import com.arctouch.codechallenge.util.Logger
 import com.arctouch.codechallenge.util.MovieImageUrlBuilder

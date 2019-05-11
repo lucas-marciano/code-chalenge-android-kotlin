@@ -1,4 +1,4 @@
-package com.arctouch.codechallenge
+package com.arctouch.codechallenge.base
 
 import android.app.Application
 import com.arctouch.codechallenge.module.appModule

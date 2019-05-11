@@ -16,12 +16,11 @@ class HomeActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_activity)
         viewModel.apiInstance = api
-
     }
 
     override fun onResume() {
         super.onResume()
-        viewModel.requestMovies()
+        viewModel.fetch()
 
         viewModel.mMovies.observe(this, Observer { movies ->
             movies?.let {
