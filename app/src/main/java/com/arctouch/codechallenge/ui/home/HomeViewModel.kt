@@ -3,6 +3,7 @@ package com.arctouch.codechallenge.ui.home
 import android.annotation.SuppressLint
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import android.content.Intent
 import android.util.Log
 import com.arctouch.codechallenge.api.TmdbApi
 import com.arctouch.codechallenge.data.Cache
@@ -17,9 +18,25 @@ class HomeViewModel : ViewModel() {
     var mMovies = MutableLiveData<List<Movie>>()
 
     @SuppressLint("CheckResult")
-    fun requestMovies() {
-        if (Logger.DEBUG) Log.d(TAG, "requestMovies")
+    fun fetch() {
+        if (Logger.DEBUG) Log.d(TAG, "fetch")
 
+        if (Cache.genres.isEmpty()) {
+            apiInstance.genres(TmdbApi.API_KEY, TmdbApi.DEFAULT_LANGUAGE)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe {
+                        Cache.cacheGenres(it.genres)
+                        requestMovies()
+                    }
+        } else {
+            requestMovies()
+        }
+    }
+
+    @SuppressLint("CheckResult")
+    private fun requestMovies() {
+        if (Logger.DEBUG) Log.d(TAG, "requestMovies")
         apiInstance.upcomingMovies(TmdbApi.API_KEY, TmdbApi.DEFAULT_LANGUAGE, 1, TmdbApi.DEFAULT_REGION)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
