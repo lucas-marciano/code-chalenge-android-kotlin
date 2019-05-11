@@ -23,12 +23,11 @@ interface TmdbApi {
         @Query("language") language: String
     ): Observable<GenreResponse>
 
+    // I change the endpoint to return more results to my region
     @GET("movie/upcoming")
     fun upcomingMovies(
         @Query("api_key") apiKey: String,
-        @Query("language") language: String,
-        @Query("page") page: Long,
-        @Query("region") region: String
+        @Query("page") page: Long
     ): Observable<UpcomingMoviesResponse>
 
     @GET("movie/{id}")

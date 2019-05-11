@@ -18,7 +18,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.movie_item.view.*
 
-class HomeAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+
+    private var movies: List<Movie> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_item, parent, false)
@@ -28,6 +30,11 @@ class HomeAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<HomeAd
     override fun getItemCount() = movies.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(movies[position])
+
+    fun insertMovies(movie: Movie) {
+        this.movies += movie
+        notifyDataSetChanged()
+    }
 
     class ViewHolder(itemView: View, private val context: Context) : RecyclerView.ViewHolder(itemView) {
         private val TAG = Logger.tag
@@ -57,8 +64,6 @@ class HomeAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<HomeAd
                 val intent = Intent(context, DetailsActivity::class.java)
                 intent.putExtra(ID_MOVIE_SELECTED, movie.id.toLong())
                 context.startActivity(intent)
-
-//                prefs.idMovie = movie.id.toLong()
             }
         }
     }

@@ -7,7 +7,7 @@
     tools:context=".ui.detail.DetailsFragment">
 
     <ImageView
-        android:id="@+id/ivPoster"
+        android:id="@+id/ivBackdrop"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -30,7 +30,7 @@
         app:layout_constraintGuide_percent="0.30642954" />
 
     <ImageView
-        android:id="@+id/ivBackdrop"
+        android:id="@+id/ivPoster"
         android:layout_width="60dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -48,52 +48,58 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ellipsize="end"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/tvGenres"
+        app:layout_constraintBottom_toTopOf="@+id/tvReleaseDate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivBackdrop"
-        app:layout_constraintTop_toBottomOf="@+id/ivPoster" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivPoster"
+        app:layout_constraintTop_toTopOf="@+id/guide_poster_resume" />
 
     <TextView
         android:id="@+id/tvGenres"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvReleaseDate"
+        app:layout_constraintBottom_toTopOf="@+id/scrool_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivBackdrop"
-        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivPoster"
+        app:layout_constraintTop_toBottomOf="@+id/tvReleaseDate" />
 
     <TextView
         android:id="@+id/tvReleaseDate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvOverview"
+        app:layout_constraintBottom_toTopOf="@+id/tvGenres"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvName"
-        app:layout_constraintTop_toBottomOf="@+id/tvGenres" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivPoster"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
-    <TextView
-        android:id="@+id/tvOverview"
+    <ScrollView
+        android:id="@+id/scrool_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/message_no_overview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guide_resume_overview" />
+        app:layout_constraintTop_toTopOf="@+id/guide_resume_overview">
+
+        <TextView
+            android:id="@+id/tvOverview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/message_no_overview" />
+    </ScrollView>
 
     <android.support.constraint.Guideline
         android:id="@+id/guide_resume_overview"
