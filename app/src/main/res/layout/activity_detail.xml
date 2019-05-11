@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.detail.DetailActivity">
+    tools:context=".ui.detail.DetailsActivity">
 
     <ImageView
-        android:id="@+id/ivPoster"
+        android:id="@+id/ivBackdrop"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -30,7 +30,7 @@
         app:layout_constraintGuide_percent="0.30642954" />
 
     <ImageView
-        android:id="@+id/ivBackdrop"
+        android:id="@+id/ivPoster"
         android:layout_width="60dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -54,8 +54,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/tvGenres"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivBackdrop"
-        app:layout_constraintTop_toBottomOf="@+id/ivPoster" />
+        app:layout_constraintStart_toEndOf="@+id/ivPoster"
+        app:layout_constraintTop_toBottomOf="@+id/ivBackdrop" />
 
     <TextView
         android:id="@+id/tvGenres"
@@ -66,7 +66,7 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toTopOf="@+id/tvReleaseDate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivBackdrop"
+        app:layout_constraintStart_toEndOf="@+id/ivPoster"
         app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
     <TextView
