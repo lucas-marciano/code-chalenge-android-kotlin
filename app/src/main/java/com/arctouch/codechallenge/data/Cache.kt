@@ -6,7 +6,7 @@ object Cache {
 
     var genres = listOf<Genre>()
 
-    fun cacheGenres(genres: List<Genre>) {
-        this.genres = genres
+    fun cacheGenres(genre: Genre) {
+        this.genres += genre
     }
 }
