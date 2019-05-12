@@ -8,6 +8,7 @@ buildscript {
         reactivex_version = '2.0.2'
         glide_version = '4.6.1'
         koin_version = '2.0.0-GA'
+        okhttp_version = '3.12.1'
     }
 
     repositories {
